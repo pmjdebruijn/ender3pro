@@ -44,6 +44,8 @@
 
   #endif
 
+  #if ENABLED(SHOW_MARLIN_BOOTSCREEN)
+
   #if ENABLED(START_BMPHIGH)
 
     #define START_BMPWIDTH      112
@@ -125,6 +127,8 @@
   #endif
 
   static_assert(sizeof(start_bmp) == (START_BMP_BYTEWIDTH) * (START_BMPHEIGHT), "Bootscreen (start_bmp) dimensions don't match data.");
+
+  #endif // SHOW_MARLIN_BOOTSCREEN
 
 #endif
 

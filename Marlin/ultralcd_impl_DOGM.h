@@ -313,6 +313,8 @@ void lcd_printPGM_utf(const char *str, uint8_t n=LCD_WIDTH) {
       lcd_custom_bootscreen();
     #endif
 
+    #if ENABLED(SHOW_MARLIN_BOOTSCREEN)
+
     constexpr uint8_t offy =
       #if ENABLED(START_BMPHIGH)
         (LCD_PIXEL_HEIGHT - (START_BMPHEIGHT)) / 2
@@ -339,6 +341,9 @@ void lcd_printPGM_utf(const char *str, uint8_t n=LCD_WIDTH) {
       #endif
     } while (u8g.nextPage());
     safe_delay(BOOTSCREEN_TIMEOUT);
+
+  #endif // SHOW_MARLIN_BOOTSCREEN
+
   }
 
 #endif // SHOW_BOOTSCREEN
